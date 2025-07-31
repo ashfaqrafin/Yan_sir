@@ -1,6 +1,8 @@
 import json
+import re
 import os
 import glob
+
 
 def convert_jsonl_to_json_array(input_file, output_file):
     json_objects = []
@@ -24,8 +26,12 @@ def convert_jsonl_to_json_array(input_file, output_file):
     return len(json_objects)
 
 def process_all_year_files():
-    input_dir = '/Users/ashfaqkhanrafin/Codes/BracU/research/Yan_sir/year_wise_data'
-    output_dir = '/Users/ashfaqkhanrafin/Codes/BracU/research/Yan_sir/year_wise_data_arrays'
+    # Get the directory where this script is located
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    
+    # Use relative paths based on script location
+    input_dir = os.path.join(script_dir, 'year_wise_data')
+    output_dir = os.path.join(script_dir, 'year_wise_data_arrays')
     
     # Create output directory if it doesn't exist
     os.makedirs(output_dir, exist_ok=True)

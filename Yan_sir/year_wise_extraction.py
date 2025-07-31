@@ -2,8 +2,12 @@ import json
 import re
 import os
 
-input_file = '/Users/ashfaqkhanrafin/Codes/BracU/research/Yan_sir/dblp_v14.json'
-output_dir = '/Users/ashfaqkhanrafin/Codes/BracU/research/Yan_sir/year_wise_data'
+# Get the directory where this script is located
+script_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Use relative paths based on script location
+input_file = os.path.join(script_dir, 'dblp_v14.json')
+output_dir = os.path.join(script_dir, 'year_wise_data')
 
 # Create output directory if it doesn't exist
 os.makedirs(output_dir, exist_ok=True)
