@@ -1,0 +1,1162 @@
+{
+  "metadata": {
+    "search_date": "2025-08-02T02:20:24.404681",
+    "search_type": "quick_sample",
+    "files_searched": [
+      "dblp_1950_array.json",
+      "dblp_1960_array.json",
+      "dblp_1970_array.json",
+      "dblp_1980_array.json",
+      "dblp_1990_array.json",
+      "dblp_2000_array.json",
+      "dblp_2010_array.json",
+      "dblp_2020_array.json"
+    ],
+    "total_nobel_authors_found": 51
+  },
+  "found_authors": {
+    "Herbert A. Simon": {
+      "nobel_info": {
+        "name": "Herbert Simon",
+        "fullName": "Herbert A. Simon",
+        "awardYear": "1978",
+        "category": "Economic Sciences",
+        "id": "691"
+      },
+      "papers": [
+        {
+          "title": "Some further notes on a class of skew distribution functions",
+          "year": 1960
+        },
+        {
+          "title": "Models of Competence in Solving Physics Problems",
+          "year": 1980
+        },
+        {
+          "title": "Cognitive Science: The Newest Science of the Artificial*",
+          "year": 1980
+        },
+        {
+          "title": "Prediction and Prescription in Systems Modeling",
+          "year": 1990
+        },
+        {
+          "title": "Laboratory replication of scientific discovery processes",
+          "year": 1990
+        },
+        {
+          "title": "Five Seconds or Sixty? Presentation Time in Expert Memory",
+          "year": 2000
+        }
+      ],
+      "files_found_in": [
+        "dblp_1960_array.json",
+        "dblp_1980_array.json",
+        "dblp_1990_array.json",
+        "dblp_2000_array.json"
+      ]
+    },
+    "Jacques Dubochet": {
+      "nobel_info": {
+        "name": "Jacques Dubochet",
+        "fullName": "Jacques Dubochet",
+        "awardYear": "2017",
+        "category": "Chemistry",
+        "id": "944"
+      },
+      "papers": [
+        {
+          "title": "Self-assembly of single and closely spaced nucleosome core particles",
+          "year": 1980
+        }
+      ],
+      "files_found_in": [
+        "dblp_1980_array.json"
+      ]
+    },
+    "John B. Goodenough": {
+      "nobel_info": {
+        "name": "John B. Goodenough",
+        "fullName": "John B. Goodenough",
+        "awardYear": "2019",
+        "category": "Chemistry",
+        "id": "976"
+      },
+      "papers": [
+        {
+          "title": "The Ada Compiler Validation Capability",
+          "year": 1980
+        }
+      ],
+      "files_found_in": [
+        "dblp_1980_array.json"
+      ]
+    },
+    "Yves Chauvin": {
+      "nobel_info": {
+        "name": "Yves Chauvin",
+        "fullName": "Yves Chauvin",
+        "awardYear": "2005",
+        "category": "Chemistry",
+        "id": "794"
+      },
+      "papers": [
+        {
+          "title": "Generalization Performance of Overtrained Back-Propagation Networks",
+          "year": 1990
+        },
+        {
+          "title": "Neural Networks Structured for Control Application to Aircraft Landing",
+          "year": 1990
+        },
+        {
+          "title": "Generalization Dynamics in LMS Trained Linear Networks",
+          "year": 1990
+        },
+        {
+          "title": "Assessing the accuracy of prediction algorithms for classification: an overview",
+          "year": 2000
+        }
+      ],
+      "files_found_in": [
+        "dblp_1990_array.json",
+        "dblp_2000_array.json"
+      ]
+    },
+    "Paul Sabatier": {
+      "nobel_info": {
+        "name": "Paul Sabatier",
+        "fullName": "Paul Sabatier",
+        "awardYear": "1912",
+        "category": "Chemistry",
+        "id": "173"
+      },
+      "papers": [
+        {
+          "title": "Using the same system for analyzing and synthesizing sentences",
+          "year": 1990
+        }
+      ],
+      "files_found_in": [
+        "dblp_1990_array.json"
+      ]
+    },
+    "Sidney Altman": {
+      "nobel_info": {
+        "name": "Sidney Altman",
+        "fullName": "Sidney Altman",
+        "awardYear": "1989",
+        "category": "Chemistry",
+        "id": "273"
+      },
+      "papers": [
+        {
+          "title": "Structure and transcription of a human gene for H1 RNA, the RNA component of human RNase P",
+          "year": 1990
+        }
+      ],
+      "files_found_in": [
+        "dblp_1990_array.json"
+      ]
+    },
+    "Tomas Lindahl": {
+      "nobel_info": {
+        "name": "Tomas Lindahl",
+        "fullName": "Tomas Lindahl",
+        "awardYear": "2015",
+        "category": "Chemistry",
+        "id": "921"
+      },
+      "papers": [
+        {
+          "title": "Complementation of the xeroderma pigmentosum DNA repair synthesis defect with Escherichia coli UvrABC proteins in a cell-free system",
+          "year": 1990
+        }
+      ],
+      "files_found_in": [
+        "dblp_1990_array.json"
+      ]
+    },
+    "Joshua Lederberg": {
+      "nobel_info": {
+        "name": "Joshua Lederberg",
+        "fullName": "Joshua Lederberg",
+        "awardYear": "1958",
+        "category": "Physiology or Medicine",
+        "id": "366"
+      },
+      "papers": [
+        {
+          "title": "How DENDRAL was conceived and born",
+          "year": 1990
+        }
+      ],
+      "files_found_in": [
+        "dblp_1990_array.json"
+      ]
+    },
+    "Akira Suzuki": {
+      "nobel_info": {
+        "name": "Akira Suzuki",
+        "fullName": "Akira Suzuki",
+        "awardYear": "2010",
+        "category": "Chemistry",
+        "id": "853"
+      },
+      "papers": [
+        {
+          "title": "High Quality Image Processing Using One-Dot-Movement and Re-sampling Techniques.",
+          "year": 2000
+        },
+        {
+          "title": "Facial parts-based face hallucination method",
+          "year": 2010
+        },
+        {
+          "title": "Task-Oriented Evaluation of Super-Resolution Techniques",
+          "year": 2010
+        },
+        {
+          "title": "Computing gröbner bases within linear algebra and its implementation",
+          "year": 2010
+        }
+      ],
+      "files_found_in": [
+        "dblp_2000_array.json",
+        "dblp_2010_array.json"
+      ]
+    },
+    "Michael Levitt": {
+      "nobel_info": {
+        "name": "Michael Levitt",
+        "fullName": "Michael Levitt",
+        "awardYear": "2013",
+        "category": "Chemistry",
+        "id": "890"
+      },
+      "papers": [
+        {
+          "title": "Towards a Complete Map of the Protein Space Based on a Unified Sequence and Structure Analysis of All Known Proteins",
+          "year": 2000
+        },
+        {
+          "title": "A unified sequence-structure classification of protein sequences: combining sequence and structure in a map of the protein space",
+          "year": 2000
+        },
+        {
+          "title": "The ASTRAL compendium for protein structure and sequence analysis",
+          "year": 2000
+        },
+        {
+          "title": "Super-resolution biomolecular crystallography with low-resolution data",
+          "year": 2010
+        },
+        {
+          "title": "Conformational optimization with natural degrees of freedom: a novel stochastic chain closure algorithm.",
+          "year": 2010
+        },
+        {
+          "title": "INSIGHTS INTO THE INTRA-RING SUBUNIT ORDER OF TRIC/CCT: A STRUCTURAL AND EVOLUTIONARY ANALYSIS",
+          "year": 2010
+        }
+      ],
+      "files_found_in": [
+        "dblp_2000_array.json",
+        "dblp_2010_array.json"
+      ]
+    },
+    "Martin Karplus": {
+      "nobel_info": {
+        "name": "Martin Karplus",
+        "fullName": "Martin Karplus",
+        "awardYear": "2013",
+        "category": "Chemistry",
+        "id": "889"
+      },
+      "papers": [
+        {
+          "title": "Design of dimerization inhibitors of HIV-1 aspartic proteinase: A computer-based combinatorial approach",
+          "year": 2000
+        },
+        {
+          "title": "Quantitative Structure-Activity Relationship Studies of Progesterone Receptor Binding Steroids.",
+          "year": 2000
+        },
+        {
+          "title": "Quantitative Structure—Activity Relationship Studies of Progesterone Receptor Binding Steroids.",
+          "year": 2000
+        }
+      ],
+      "files_found_in": [
+        "dblp_2000_array.json"
+      ]
+    },
+    "Paul Müller": {
+      "nobel_info": {
+        "name": "Paul Müller",
+        "fullName": "Paul Hermann Müller",
+        "awardYear": "1948",
+        "category": "Physiology or Medicine",
+        "id": "346"
+      },
+      "papers": [
+        {
+          "title": "Content Management in Web Based Education",
+          "year": 2000
+        },
+        {
+          "title": "Ein Zugang zu QoS-fähigen Backbone-Netzen über beliebige Layer 2 Technologien",
+          "year": 2000
+        },
+        {
+          "title": "Applying TOGAF to Define and Govern a Service-oriented Architecture in a Large-scale Research Project",
+          "year": 2010
+        },
+        {
+          "title": "German-lab experimental facility",
+          "year": 2010
+        },
+        {
+          "title": "G-Lab Deep: Cross-Layer Composition and Security for a Flexible Future Internet",
+          "year": 2010
+        },
+        {
+          "title": "Experimentalforschung für das Future Internet – deutsche und europäische Initiativen",
+          "year": 2010
+        }
+      ],
+      "files_found_in": [
+        "dblp_2000_array.json",
+        "dblp_2010_array.json"
+      ]
+    },
+    "Luis Alvarez": {
+      "nobel_info": {
+        "name": "Luis Alvarez",
+        "fullName": "Luis Walter Alvarez",
+        "awardYear": "1968",
+        "category": "Physics",
+        "id": "89"
+      },
+      "papers": [
+        {
+          "title": "Reliable Estimation of Dense Optical Flow Fields with Large Displacements",
+          "year": 2000
+        },
+        {
+          "title": "Morphological thick line center detection",
+          "year": 2010
+        },
+        {
+          "title": "Algebraic Lens Distortion Model Estimation",
+          "year": 2010
+        },
+        {
+          "title": "Morphological snakes",
+          "year": 2010
+        }
+      ],
+      "files_found_in": [
+        "dblp_2000_array.json",
+        "dblp_2010_array.json"
+      ]
+    },
+    "Peter Mitchell": {
+      "nobel_info": {
+        "name": "Peter Mitchell",
+        "fullName": "Peter D. Mitchell",
+        "awardYear": "1978",
+        "category": "Chemistry",
+        "id": "251"
+      },
+      "papers": [
+        {
+          "title": "Computer mediated interaction in Asperger's syndrome: the Bubble Dialogue program",
+          "year": 2000
+        }
+      ],
+      "files_found_in": [
+        "dblp_2000_array.json"
+      ]
+    },
+    "Reinhard Selten": {
+      "nobel_info": {
+        "name": "Reinhard Selten",
+        "fullName": "Reinhard Selten",
+        "awardYear": "1994",
+        "category": "Economic Sciences",
+        "id": "713"
+      },
+      "papers": [
+        {
+          "title": "An Experiment on the Hypothesis of Involuntary Truth-Signalling in Bargaining",
+          "year": 2000
+        }
+      ],
+      "files_found_in": [
+        "dblp_2000_array.json"
+      ]
+    },
+    "Arieh Warshel": {
+      "nobel_info": {
+        "name": "Arieh Warshel",
+        "fullName": "Arieh Warshel",
+        "awardYear": "2013",
+        "category": "Chemistry",
+        "id": "891"
+      },
+      "papers": [
+        {
+          "title": "Constraining the Electron Densities in DFT Method as an Effective Way for Ab Initio Studies of Metal-Catalyzed reactions",
+          "year": 2000
+        },
+        {
+          "title": "Effective way of modeling chemical catalysis: Empirical valence bond picture of role of solvent and catalyst in alkylation reactions",
+          "year": 2000
+        },
+        {
+          "title": "Q-Chem 2.0: A High-Performance Ab Initio Electronic Structure Program Package",
+          "year": 2000
+        }
+      ],
+      "files_found_in": [
+        "dblp_2000_array.json"
+      ]
+    },
+    "John O'Keefe": {
+      "nobel_info": {
+        "name": "John O'Keefe",
+        "fullName": "John O'Keefe",
+        "awardYear": "2014",
+        "category": "Physiology or Medicine",
+        "id": "903"
+      },
+      "papers": [
+        {
+          "title": "Predictions derived from modelling the hippocampal role in navigation.",
+          "year": 2000
+        }
+      ],
+      "files_found_in": [
+        "dblp_2000_array.json"
+      ]
+    },
+    "Abhijit Banerjee": {
+      "nobel_info": {
+        "name": "Abhijit Banerjee",
+        "fullName": "Abhijit Banerjee",
+        "awardYear": "2019",
+        "category": "Economic Sciences",
+        "id": "982"
+      },
+      "papers": [
+        {
+          "title": "Neutrally Stable Outcomes in Cheap-Talk Coordination Games☆",
+          "year": 2000
+        }
+      ],
+      "files_found_in": [
+        "dblp_2000_array.json"
+      ]
+    },
+    "Michael Smith": {
+      "nobel_info": {
+        "name": "Michael Smith",
+        "fullName": "Michael Smith",
+        "awardYear": "1993",
+        "category": "Chemistry",
+        "id": "279"
+      },
+      "papers": [
+        {
+          "title": "Supporting dynamic composition of components",
+          "year": 2000
+        },
+        {
+          "title": "Cryptographic Information Recovery Using Key Recovery",
+          "year": 2000
+        },
+        {
+          "title": "Empirical investigation of a novel approach to check the integrity of software engineering measuring processes (poster session)",
+          "year": 2000
+        },
+        {
+          "title": "Terp: Syntax for OWL-friendly SPARQL Queries.",
+          "year": 2010
+        },
+        {
+          "title": "Bayesian skew selection for multivariate models",
+          "year": 2010
+        }
+      ],
+      "files_found_in": [
+        "dblp_2000_array.json",
+        "dblp_2010_array.json"
+      ]
+    },
+    "Walter Gilbert": {
+      "nobel_info": {
+        "name": "Walter Gilbert",
+        "fullName": "Walter Gilbert",
+        "awardYear": "1980",
+        "category": "Chemistry",
+        "id": "255"
+      },
+      "papers": [
+        {
+          "title": "Invited presentation: introns and modules in ancient conserved genes (abstract only)",
+          "year": 2000
+        },
+        {
+          "title": "EID: the Exon–Intron Database—an exhaustive database of protein-coding intron-containing genes",
+          "year": 2000
+        }
+      ],
+      "files_found_in": [
+        "dblp_2000_array.json"
+      ]
+    },
+    "Michael S. Brown": {
+      "nobel_info": {
+        "name": "Michael S. Brown",
+        "fullName": "Michael S. Brown",
+        "awardYear": "1985",
+        "category": "Physiology or Medicine",
+        "id": "432"
+      },
+      "papers": [
+        {
+          "title": "Beyond 2D images: effective 3D imaging for library materials",
+          "year": 2000
+        },
+        {
+          "title": "Colorization for single image super resolution",
+          "year": 2010
+        },
+        {
+          "title": "A framework for ultra high resolution 3D imaging",
+          "year": 2010
+        },
+        {
+          "title": "Ink-bleed reduction using functional minimization",
+          "year": 2010
+        },
+        {
+          "title": "Super resolution using edge prior and single image detail synthesis",
+          "year": 2010
+        },
+        {
+          "title": "BinarizationShop: a user-assisted software suite for converting old documents to black-and-white",
+          "year": 2010
+        },
+        {
+          "title": "Motion regularization for matting motion blurred objects",
+          "year": 2010
+        },
+        {
+          "title": "Improved tagged cardiac MRI myocardium strain analysis by leveraging cine segmentation",
+          "year": 2020
+        }
+      ],
+      "files_found_in": [
+        "dblp_2000_array.json",
+        "dblp_2010_array.json",
+        "dblp_2020_array.json"
+      ]
+    },
+    "Richard Kuhn": {
+      "nobel_info": {
+        "name": "Richard Kuhn",
+        "fullName": "Richard Kuhn",
+        "awardYear": "1938",
+        "category": "Chemistry",
+        "id": "198"
+      },
+      "papers": [
+        {
+          "title": "The NIST model for role-based access control: towards a unified standard",
+          "year": 2000
+        }
+      ],
+      "files_found_in": [
+        "dblp_2000_array.json"
+      ]
+    },
+    "Gerald M. Edelman": {
+      "nobel_info": {
+        "name": "Gerald M. Edelman",
+        "fullName": "Gerald M. Edelman",
+        "awardYear": "1972",
+        "category": "Physiology or Medicine",
+        "id": "398"
+      },
+      "papers": [
+        {
+          "title": "Plasticity in Value Systems and its Role in Adaptive Behavior",
+          "year": 2000
+        },
+        {
+          "title": "Robust localization of auditory and visual targets in a robotic barn owl",
+          "year": 2000
+        }
+      ],
+      "files_found_in": [
+        "dblp_2000_array.json"
+      ]
+    },
+    "Roger B. Myerson": {
+      "nobel_info": {
+        "name": "Roger B. Myerson",
+        "fullName": "Roger B. Myerson",
+        "awardYear": "2007",
+        "category": "Economic Sciences",
+        "id": "822"
+      },
+      "papers": [
+        {
+          "title": "Large Poisson Games",
+          "year": 2000
+        },
+        {
+          "title": "Comparison of Scoring Rules in Poisson Voting Games",
+          "year": 2000
+        }
+      ],
+      "files_found_in": [
+        "dblp_2000_array.json"
+      ]
+    },
+    "Makoto Kobayashi": {
+      "nobel_info": {
+        "name": "Makoto Kobayashi",
+        "fullName": "Makoto Kobayashi",
+        "awardYear": "2008",
+        "category": "Physics",
+        "id": "827"
+      },
+      "papers": [
+        {
+          "title": "Cursive handwritten word recognition by integrating multiple classifiers",
+          "year": 2000
+        },
+        {
+          "title": "A basic inspection of wall-climbing support system for the visually challenged",
+          "year": 2010
+        },
+        {
+          "title": "Development and installation of programmable light-emitting Braille blocks",
+          "year": 2010
+        },
+        {
+          "title": "Impact of the Japanese Diagnosis Procedure Combination-based Payment System in Japan",
+          "year": 2010
+        }
+      ],
+      "files_found_in": [
+        "dblp_2000_array.json",
+        "dblp_2010_array.json"
+      ]
+    },
+    "Leon N. Cooper": {
+      "nobel_info": {
+        "name": "Leon N. Cooper",
+        "fullName": "Leon Neil Cooper",
+        "awardYear": "1972",
+        "category": "Physics",
+        "id": "95"
+      },
+      "papers": [
+        {
+          "title": "Formation of Direction Selectivity in Natural Scene Environments",
+          "year": 2000
+        },
+        {
+          "title": "Interactive Parts Model: An Application to Recognition of On-line Cursive Script",
+          "year": 2000
+        }
+      ],
+      "files_found_in": [
+        "dblp_2000_array.json"
+      ]
+    },
+    "Richard J. Roberts": {
+      "nobel_info": {
+        "name": "Richard J. Roberts",
+        "fullName": "Richard J. Roberts",
+        "awardYear": "1993",
+        "category": "Physiology or Medicine",
+        "id": "448"
+      },
+      "papers": [
+        {
+          "title": "The early days of bioinformatics publishing",
+          "year": 2000
+        },
+        {
+          "title": "REBASE—a database for DNA restriction and modification: enzymes, genes and genomes",
+          "year": 2010
+        }
+      ],
+      "files_found_in": [
+        "dblp_2000_array.json",
+        "dblp_2010_array.json"
+      ]
+    },
+    "John A. Pople": {
+      "nobel_info": {
+        "name": "John Pople",
+        "fullName": "John A. Pople",
+        "awardYear": "1998",
+        "category": "Chemistry",
+        "id": "291"
+      },
+      "papers": [
+        {
+          "title": "Q-Chem 2.0: A High-Performance Ab Initio Electronic Structure Program Package",
+          "year": 2000
+        }
+      ],
+      "files_found_in": [
+        "dblp_2000_array.json"
+      ]
+    },
+    "Ilya Prigogine": {
+      "nobel_info": {
+        "name": "Ilya Prigogine",
+        "fullName": "Ilya Romanovich Prigogine",
+        "awardYear": "1977",
+        "category": "Chemistry",
+        "id": "250"
+      },
+      "papers": [
+        {
+          "title": "The networked society",
+          "year": 2000
+        }
+      ],
+      "files_found_in": [
+        "dblp_2000_array.json"
+      ]
+    },
+    "Elinor Ostrom": {
+      "nobel_info": {
+        "name": "Elinor Ostrom",
+        "fullName": "Elinor Ostrom",
+        "awardYear": "2009",
+        "category": "Economic Sciences",
+        "id": "846"
+      },
+      "papers": [
+        {
+          "title": "Working Together: Collective Action, the Commons, and Multiple Methods in Practice",
+          "year": 2010
+        },
+        {
+          "title": "Bosses and kings: asymmetric power in paired common pool and public good games",
+          "year": 2010
+        }
+      ],
+      "files_found_in": [
+        "dblp_2010_array.json"
+      ]
+    },
+    "Robert Koch": {
+      "nobel_info": {
+        "name": "Robert Koch",
+        "fullName": "Robert Koch",
+        "awardYear": "1905",
+        "category": "Physiology or Medicine",
+        "id": "297"
+      },
+      "papers": [
+        {
+          "title": "Security System for Encrypted Environments (S2E2)",
+          "year": 2010
+        },
+        {
+          "title": "Command Evaluation in Encrypted Remote Sessions",
+          "year": 2010
+        },
+        {
+          "title": "User identification in encrypted network communications",
+          "year": 2010
+        }
+      ],
+      "files_found_in": [
+        "dblp_2010_array.json"
+      ]
+    },
+    "George Porter": {
+      "nobel_info": {
+        "name": "George Porter",
+        "fullName": "George Porter",
+        "awardYear": "1967",
+        "category": "Chemistry",
+        "id": "235"
+      },
+      "papers": [
+        {
+          "title": "Experiences with tracing causality in networked services",
+          "year": 2010
+        },
+        {
+          "title": "Decoupling storage and computation in Hadoop with SuperDataNodes",
+          "year": 2010
+        },
+        {
+          "title": "Helios: a hybrid electrical/optical switch architecture for modular data centers",
+          "year": 2010
+        }
+      ],
+      "files_found_in": [
+        "dblp_2010_array.json"
+      ]
+    },
+    "Peter Higgs": {
+      "nobel_info": {
+        "name": "Peter Higgs",
+        "fullName": "Peter W. Higgs",
+        "awardYear": "2013",
+        "category": "Physics",
+        "id": "888"
+      },
+      "papers": [
+        {
+          "title": "Ontology-based information management: exploiting user perspective within the motion picture industry",
+          "year": 2010
+        }
+      ],
+      "files_found_in": [
+        "dblp_2010_array.json"
+      ]
+    },
+    "John Macleod": {
+      "nobel_info": {
+        "name": "John Macleod",
+        "fullName": "John James Rickard Macleod",
+        "awardYear": "1923",
+        "category": "Physiology or Medicine",
+        "id": "314"
+      },
+      "papers": [
+        {
+          "title": "A Simple Method to Ensure Plausible Multiple Imputation for Continuous Multivariate Data",
+          "year": 2010
+        }
+      ],
+      "files_found_in": [
+        "dblp_2010_array.json"
+      ]
+    },
+    "Paul Greengard": {
+      "nobel_info": {
+        "name": "Paul Greengard",
+        "fullName": "Paul Greengard",
+        "awardYear": "2000",
+        "category": "Physiology or Medicine",
+        "id": "723"
+      },
+      "papers": [
+        {
+          "title": "A neurocomputational method for fully automated 3D dendritic spine detection and segmentation of medium-sized spiny neurons.",
+          "year": 2010
+        }
+      ],
+      "files_found_in": [
+        "dblp_2010_array.json"
+      ]
+    },
+    "William D. Phillips": {
+      "nobel_info": {
+        "name": "William D. Phillips",
+        "fullName": "William D. Phillips",
+        "awardYear": "1997",
+        "category": "Physics",
+        "id": "154"
+      },
+      "papers": [
+        {
+          "title": "An internet overlay architecture for global scale wireless sensor networks",
+          "year": 2010
+        }
+      ],
+      "files_found_in": [
+        "dblp_2010_array.json"
+      ]
+    },
+    "Wolfgang Paul": {
+      "nobel_info": {
+        "name": "Wolfgang Paul",
+        "fullName": "Wolfgang Paul",
+        "awardYear": "1989",
+        "category": "Physics",
+        "id": "137"
+      },
+      "papers": [
+        {
+          "title": "Computational models for the age of multicore processing",
+          "year": 2010
+        }
+      ],
+      "files_found_in": [
+        "dblp_2010_array.json"
+      ]
+    },
+    "Carl E. Wieman": {
+      "nobel_info": {
+        "name": "Carl Wieman",
+        "fullName": "Carl E. Wieman",
+        "awardYear": "2001",
+        "category": "Physics",
+        "id": "740"
+      },
+      "papers": [
+        {
+          "title": "Science education for the 21st century: using the insights of science to teach/learn science",
+          "year": 2010
+        }
+      ],
+      "files_found_in": [
+        "dblp_2010_array.json"
+      ]
+    },
+    "Donald A. Glaser": {
+      "nobel_info": {
+        "name": "Donald A. Glaser",
+        "fullName": "Donald Arthur Glaser",
+        "awardYear": "1960",
+        "category": "Physics",
+        "id": "74"
+      },
+      "papers": [
+        {
+          "title": "Synaptic Plasticity Controls Sensory Responses through Frequency-Dependent Gamma Oscillation Resonance",
+          "year": 2010
+        }
+      ],
+      "files_found_in": [
+        "dblp_2010_array.json"
+      ]
+    },
+    "Max Planck": {
+      "nobel_info": {
+        "name": "Max Planck",
+        "fullName": "Max Karl Ernst Ludwig Planck",
+        "awardYear": "1918",
+        "category": "Physics",
+        "id": "23"
+      },
+      "papers": [
+        {
+          "title": "Automatically identifying the sources of large Internet events",
+          "year": 2010
+        }
+      ],
+      "files_found_in": [
+        "dblp_2010_array.json"
+      ]
+    },
+    "Harry M. Markowitz": {
+      "nobel_info": {
+        "name": "Harry M. Markowitz",
+        "fullName": "Harry M. Markowitz",
+        "awardYear": "1990",
+        "category": "Economic Sciences",
+        "id": "704"
+      },
+      "papers": [
+        {
+          "title": "Employee stock ownership and diversification",
+          "year": 2010
+        }
+      ],
+      "files_found_in": [
+        "dblp_2010_array.json"
+      ]
+    },
+    "Yoichiro Nambu": {
+      "nobel_info": {
+        "name": "Yoichiro Nambu",
+        "fullName": "Yoichiro Nambu",
+        "awardYear": "2008",
+        "category": "Physics",
+        "id": "826"
+      },
+      "papers": [
+        {
+          "title": "Nambu-Jona-Lasinio model",
+          "year": 2010
+        }
+      ],
+      "files_found_in": [
+        "dblp_2010_array.json"
+      ]
+    },
+    "Alvin E. Roth": {
+      "nobel_info": {
+        "name": "Alvin E. Roth",
+        "fullName": "Alvin E. Roth",
+        "awardYear": "2012",
+        "category": "Economic Sciences",
+        "id": "882"
+      },
+      "papers": [
+        {
+          "title": "A Choice Prediction Competition for Market Entry Games: An Introduction",
+          "year": 2010
+        },
+        {
+          "title": "Erev, I. et al. A Choice Prediction Competition for Market Entry Games: An Introduction. Games 2010, 1, 117-136",
+          "year": 2010
+        }
+      ],
+      "files_found_in": [
+        "dblp_2010_array.json"
+      ]
+    },
+    "James Watson": {
+      "nobel_info": {
+        "name": "James Watson",
+        "fullName": "James Dewey Watson",
+        "awardYear": "1962",
+        "category": "Physiology or Medicine",
+        "id": "373"
+      },
+      "papers": [
+        {
+          "title": "Bioinformatics training: a review of challenges, actions and support requirements",
+          "year": 2010
+        }
+      ],
+      "files_found_in": [
+        "dblp_2010_array.json"
+      ]
+    },
+    "Joachim Frank": {
+      "nobel_info": {
+        "name": "Joachim Frank",
+        "fullName": "Joachim Frank",
+        "awardYear": "2017",
+        "category": "Chemistry",
+        "id": "945"
+      },
+      "papers": [
+        {
+          "title": "Classification by bootstrapping in single particle methods",
+          "year": 2010
+        }
+      ],
+      "files_found_in": [
+        "dblp_2010_array.json"
+      ]
+    },
+    "Alan J. Heeger": {
+      "nobel_info": {
+        "name": "Alan Heeger",
+        "fullName": "Alan J. Heeger",
+        "awardYear": "2000",
+        "category": "Chemistry",
+        "id": "729"
+      },
+      "papers": [
+        {
+          "title": "Semiconducting Polymer Photodetectors with Electron and Hole Blocking Layers: High Detectivity in the Near-Infrared",
+          "year": 2010
+        }
+      ],
+      "files_found_in": [
+        "dblp_2010_array.json"
+      ]
+    },
+    "Robert J. Aumann": {
+      "nobel_info": {
+        "name": "Robert J. Aumann",
+        "fullName": "Robert J. Aumann",
+        "awardYear": "2005",
+        "category": "Economic Sciences",
+        "id": "799"
+      },
+      "papers": [
+        {
+          "title": "Some non-superadditive games, and their Shapley values, in the Talmud",
+          "year": 2010
+        }
+      ],
+      "files_found_in": [
+        "dblp_2010_array.json"
+      ]
+    },
+    "Murray Gell-Mann": {
+      "nobel_info": {
+        "name": "Murray Gell-Mann",
+        "fullName": "Murray Gell-Mann",
+        "awardYear": "1969",
+        "category": "Physics",
+        "id": "90"
+      },
+      "papers": [
+        {
+          "title": "Nature Conformable to Herself",
+          "year": 2010
+        }
+      ],
+      "files_found_in": [
+        "dblp_2010_array.json"
+      ]
+    },
+    "Patrick White": {
+      "nobel_info": {
+        "name": "Patrick White",
+        "fullName": "Patrick White",
+        "awardYear": "1973",
+        "category": "Literature",
+        "id": "648"
+      },
+      "papers": [
+        {
+          "title": "Testing Closeness of Discrete Distributions",
+          "year": 2010
+        }
+      ],
+      "files_found_in": [
+        "dblp_2010_array.json"
+      ]
+    },
+    "Robert Huber": {
+      "nobel_info": {
+        "name": "Robert Huber",
+        "fullName": "Robert Huber",
+        "awardYear": "1988",
+        "category": "Chemistry",
+        "id": "271"
+      },
+      "papers": [
+        {
+          "title": "Grenzflächendetektion im Felsenbein.",
+          "year": 2010
+        }
+      ],
+      "files_found_in": [
+        "dblp_2010_array.json"
+      ]
+    },
+    "Amartya Sen": {
+      "nobel_info": {
+        "name": "Amartya Sen",
+        "fullName": "Amartya Sen",
+        "awardYear": "1998",
+        "category": "Economic Sciences",
+        "id": "719"
+      },
+      "papers": [
+        {
+          "title": "Editorial: Special issue in memory of Kenneth J. Arrow",
+          "year": 2020
+        }
+      ],
+      "files_found_in": [
+        "dblp_2020_array.json"
+      ]
+    }
+  }
+}
