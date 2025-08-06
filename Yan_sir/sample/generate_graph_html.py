@@ -15,7 +15,16 @@ class CitationGraphHTMLGenerator:
         with open(graph_file, 'r', encoding='utf-8') as f:
             self.data = json.load(f)
         
-        self.adjacency_matrix = self.data['adjacency_matrix']
+        # Handle both sparse and dense matrix formats
+        if 'adjacency_matrix_dense' in self.data:
+            self.adjacency_matrix = self.data['adjacency_matrix_dense']
+            self.sparse_matrix = self.data['sparse_adjacency_matrix']
+        elif 'adjacency_matrix' in self.data:
+            self.adjacency_matrix = self.data['adjacency_matrix']
+            self.sparse_matrix = None
+        else:
+            raise ValueError("No adjacency matrix found in the data file")
+            
         self.researchers = self.data['researchers']
         self.nobel_winners = set(self.data['nobel_winners_ids'])
         self.statistics = self.data['statistics']
@@ -306,10 +315,50 @@ class CitationGraphHTMLGenerator:
         """Generate adjacency matrix section"""
         html = f"""
         <div class="section print-break">
-            <h2>Adjacency Matrix</h2>
+            <h2>Adjacency Matrix Representations</h2>
             <p>The adjacency matrix represents citation relationships where matrix[i][j] = 1 means researcher i cites researcher j. 
                Nobel Prize winners are highlighted in gold.</p>
+        """
+        
+        # Add sparse matrix information if available
+        if self.sparse_matrix:
+            html += f"""
+            <h3>Sparse Matrix Representation</h3>
+            <div style="background: white; padding: 20px; border-radius: 5px; margin: 15px 0;">
+                <p><strong>Format:</strong> {self.sparse_matrix['format']}</p>
+                <p><strong>Storage Efficiency:</strong> {self.metadata.get('storage_efficiency', 'N/A')}</p>
+                <p><strong>Number of Edges:</strong> {self.sparse_matrix['num_edges']} out of {self.sparse_matrix['num_nodes']}² = {self.sparse_matrix['num_nodes']**2} possible connections</p>
+                
+                <h4>Edge List (First 30 edges shown):</h4>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin: 15px 0;">
+            """
             
+            # Display first 30 edges with researcher names
+            edges_to_show = min(30, len(self.sparse_matrix['edges']))
+            for i in range(edges_to_show):
+                source, target = self.sparse_matrix['edges'][i]
+                source_name = self.researchers[source]['name'].split()[-1]  # Last name
+                target_name = self.researchers[target]['name'].split()[-1]  # Last name
+                source_badge = '🏆' if source in self.nobel_winners else ''
+                target_badge = '🏆' if target in self.nobel_winners else ''
+                
+                html += f"""
+                    <div style="background: #f8f9fa; padding: 8px; border-radius: 4px; font-size: 0.9em;">
+                        [{source}→{target}] {source_name}{source_badge} → {target_name}{target_badge}
+                    </div>
+                """
+            
+            if len(self.sparse_matrix['edges']) > edges_to_show:
+                html += f"<div style='grid-column: 1/-1; text-align: center; font-style: italic; color: #666;'>... and {len(self.sparse_matrix['edges']) - edges_to_show} more edges</div>"
+            
+            html += """
+                </div>
+            </div>
+            
+            <h3>Dense Matrix Visualization</h3>
+            """
+        
+        html += f"""
             <table class="matrix-table">
                 <thead>
                     <tr>
@@ -349,7 +398,15 @@ class CitationGraphHTMLGenerator:
                 <p><strong>●</strong> = Citation exists (researcher in row cites researcher in column)</p>
                 <p><strong>·</strong> = No citation</p>
                 <p><span style="background: #ffc107; padding: 2px 8px; border-radius: 3px;">Gold</span> = Nobel Prize winner</p>
-                <p>Numbers represent researcher IDs (0-19)</p>
+                <p>Numbers represent researcher IDs (0-{self.n-1})</p>
+        """
+        
+        if self.sparse_matrix:
+            html += f"""
+                <p><strong>Sparse Format:</strong> [source→target] notation shows citation direction</p>
+            """
+        
+        html += """
             </div>
         </div>
         """
@@ -549,7 +606,41 @@ class CitationGraphHTMLGenerator:
         <div class="section print-break">
             <h2>Algorithm Testing Guidelines</h2>
             
-            <p>This citation graph is designed for testing various graph algorithms. The adjacency matrix format makes it suitable for testing centrality measures, path-finding algorithms, community detection, and influence analysis.</p>
+            <p>This citation graph is designed for testing various graph algorithms. Both sparse (edge list) and dense (adjacency matrix) formats are available for different algorithm requirements and performance testing.</p>
+            
+            <h3>Data Format Options</h3>
+            <div style="background: white; padding: 20px; border-radius: 5px; margin: 15px 0;">
+        """
+        
+        if self.sparse_matrix:
+            html += f"""
+                <h4>🔹 Sparse Matrix (Recommended for large graphs)</h4>
+                <ul>
+                    <li><strong>Format:</strong> Edge list with {self.sparse_matrix['num_edges']} edges</li>
+                    <li><strong>Memory Usage:</strong> {self.metadata.get('storage_efficiency', 'Efficient storage')}</li>
+                    <li><strong>Best For:</strong> Graph traversal, pathfinding, network analysis algorithms</li>
+                    <li><strong>Access:</strong> <code>data['sparse_adjacency_matrix']['edges']</code></li>
+                </ul>
+                
+                <h4>🔹 Dense Matrix (Recommended for matrix operations)</h4>
+                <ul>
+                    <li><strong>Format:</strong> Full {self.n}×{self.n} adjacency matrix</li>
+                    <li><strong>Memory Usage:</strong> {self.n**2} elements ({self.n**2 - self.sparse_matrix['num_edges']} zeros)</li>
+                    <li><strong>Best For:</strong> Linear algebra operations, centrality measures</li>
+                    <li><strong>Access:</strong> <code>data['adjacency_matrix_dense']</code></li>
+                </ul>
+            """
+        else:
+            html += """
+                <h4>🔹 Dense Matrix Format</h4>
+                <ul>
+                    <li><strong>Format:</strong> Full adjacency matrix</li>
+                    <li><strong>Access:</strong> <code>data['adjacency_matrix']</code></li>
+                </ul>
+            """
+        
+        html += """
+            </div>
             
             <h3>Recommended Algorithm Categories</h3>
             
@@ -557,30 +648,35 @@ class CitationGraphHTMLGenerator:
                 <h4>Centrality Measures</h4>
                 <p>PageRank, Betweenness Centrality, Closeness Centrality, Eigenvector Centrality</p>
                 <p><strong>Expected:</strong> Nobel winners should generally score higher, especially Prof. Jack White (ID 9)</p>
+                <p><strong>Format:</strong> Use dense matrix for linear algebra-based algorithms</p>
             </div>
             
             <div class="algorithm-card">
                 <h4>Path Finding Algorithms</h4>
                 <p>Shortest paths, All-pairs shortest paths, Reachability analysis</p>
                 <p><strong>Expected:</strong> Average path length ~2-3 steps, most researchers reachable from Nobel winners</p>
+                <p><strong>Format:</strong> Use sparse edge list for better performance</p>
             </div>
             
             <div class="algorithm-card">
                 <h4>Community Detection</h4>
                 <p>Louvain, Leiden, Modularity-based clustering</p>
                 <p><strong>Expected:</strong> Research area clustering effects, one main connected component</p>
+                <p><strong>Format:</strong> Edge list format typically preferred</p>
             </div>
             
             <div class="algorithm-card">
                 <h4>Influence Analysis</h4>
                 <p>Information propagation, Influence maximization, Network flow</p>
                 <p><strong>Expected:</strong> Nobel winner bias in influence spread models</p>
+                <p><strong>Format:</strong> Sparse format ideal for simulation algorithms</p>
             </div>
             
             <div class="algorithm-card">
                 <h4>Network Analysis</h4>
                 <p>Strongly connected components, Topological sorting, Graph traversal</p>
                 <p><strong>Expected:</strong> One large strongly connected component containing most researchers</p>
+                <p><strong>Format:</strong> Edge list format for graph traversal algorithms</p>
             </div>
             
             <h3>Data Quality Features</h3>
@@ -592,6 +688,14 @@ class CitationGraphHTMLGenerator:
                     <li><strong>Scale:</strong> 20 researchers provide good test size without being overwhelming</li>
                     <li><strong>No Self-Citations:</strong> Diagonal elements are all zero</li>
                     <li><strong>Connected Structure:</strong> Most nodes are reachable from each other</li>
+        """
+        
+        if self.sparse_matrix:
+            html += f"""
+                    <li><strong>Sparse Efficiency:</strong> {self.metadata.get('storage_efficiency', 'Significant space savings')} compared to dense representation</li>
+            """
+        
+        html += """
                 </ul>
             </div>
             
@@ -605,10 +709,46 @@ import json
 with open('citation_graph_matrix_YYYYMMDD_HHMMSS.json', 'r') as f:
     data = json.load(f)
 
-adjacency_matrix = data['adjacency_matrix']
+# For sparse matrix algorithms
+if 'sparse_adjacency_matrix' in data:
+    edges = data['sparse_adjacency_matrix']['edges']
+    num_nodes = data['sparse_adjacency_matrix']['num_nodes']
+    
+# For dense matrix algorithms  
+if 'adjacency_matrix_dense' in data:
+    adjacency_matrix = data['adjacency_matrix_dense']
+elif 'adjacency_matrix' in data:
+    adjacency_matrix = data['adjacency_matrix']
+
+# Common data
 researchers = data['researchers']
 nobel_winners = set(data['nobel_winners_ids'])
                 </pre>
+        """
+        
+        if self.sparse_matrix:
+            html += """
+                <p><strong>Converting Between Formats:</strong></p>
+                <pre style="background: #f8f9fa; padding: 10px; border-radius: 3px; overflow-x: auto;">
+# Sparse to dense
+def sparse_to_dense(edges, num_nodes):
+    matrix = [[0] * num_nodes for _ in range(num_nodes)]
+    for source, target in edges:
+        matrix[source][target] = 1
+    return matrix
+
+# Dense to sparse  
+def dense_to_sparse(matrix):
+    edges = []
+    for i in range(len(matrix)):
+        for j in range(len(matrix[i])):
+            if matrix[i][j] == 1:
+                edges.append([i, j])
+    return edges
+                </pre>
+            """
+        
+        html += """
             </div>
         </div>
         """
