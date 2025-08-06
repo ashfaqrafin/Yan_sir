@@ -1,0 +1,322 @@
+
+================================================================================
+CITATION GRAPH TEST DATASET - COMPREHENSIVE ANALYSIS REPORT
+================================================================================
+
+Generated: August 06, 2025 at 04:23 PM
+Report Date: August 06, 2025 at 04:46 PM
+
+OVERVIEW
+--------------------------------------------------------------------------------
+Total Researchers: 20
+Nobel Prize Winners: 5
+Total Citations: 61
+Graph Density: 0.161
+Average Citations per Researcher: 3.05
+
+This report presents a comprehensive analysis of a test citation graph containing 
+20 researchers, including 5 Nobel Prize winners. The graph is represented as a 
+directed adjacency matrix where each edge represents a citation relationship.
+
+================================================================================
+
+RESEARCHER PROFILES
+--------------------------------------------------------------------------------
+
+ID  Name                      Nobel Prize          Research Area   H-Index  Citations 
+-------------------------------------------------------------------------------------
+0   Dr. Alice Johnson                              Nanotechnology  24       704       
+1   Prof. Bob Smith                                Bioinformatics  45       2,506     
+2   Dr. Carol Davis           🏆 Medicine 2017      Neuroscience    97       4,910     
+3   Prof. David Wilson        🏆 Physics 2017       Nanotechnology  118      7,973     
+4   Dr. Eva Brown                                  Climate Science 64       760       
+5   Prof. Frank Miller                             Machine Learning 21       2,291     
+6   Dr. Grace Taylor                               Neuroscience    74       717       
+7   Prof. Henry Moore         🏆 Chemistry 2019     Robotics        139      9,673     
+8   Dr. Iris Clark                                 Computer Vision 38       4,179     
+9   Prof. Jack White          🏆 Medicine 2022      Climate Science 131      8,833     
+10  Dr. Kate Green                                 Biochemistry    99       3,962     
+11  Prof. Liam Hall                                Materials Science 45       1,773     
+12  Dr. Maya Patel            🏆 Chemistry 2017     Neuroscience    109      5,108     
+13  Prof. Noah Kim                                 Quantum Physics 58       1,292     
+14  Dr. Olivia Lee                                 Materials Science 54       2,666     
+15  Prof. Paul Zhang                               Machine Learning 68       4,892     
+16  Dr. Quinn Rodriguez                            Quantum Physics 58       1,145     
+17  Prof. Rachel Chen                              Robotics        47       3,462     
+18  Dr. Sam Williams                               Climate Science 34       1,069     
+19  Prof. Tina Liu                                 Machine Learning 94       2,366     
+
+
+NOBEL PRIZE WINNERS DETAILED PROFILES
+--------------------------------------------------
+
+🏆 Dr. Carol Davis (ID 2)
+   Nobel Prize: Medicine (2017)
+   Research Area: Neuroscience
+   Academic Profile: H-Index: 97, Total Citations: 4,910
+   Citation Graph: Receives 6 citations, Makes 3 citations
+
+🏆 Prof. David Wilson (ID 3)
+   Nobel Prize: Physics (2017)
+   Research Area: Nanotechnology
+   Academic Profile: H-Index: 118, Total Citations: 7,973
+   Citation Graph: Receives 4 citations, Makes 3 citations
+
+🏆 Prof. Henry Moore (ID 7)
+   Nobel Prize: Chemistry (2019)
+   Research Area: Robotics
+   Academic Profile: H-Index: 139, Total Citations: 9,673
+   Citation Graph: Receives 3 citations, Makes 5 citations
+
+🏆 Prof. Jack White (ID 9)
+   Nobel Prize: Medicine (2022)
+   Research Area: Climate Science
+   Academic Profile: H-Index: 131, Total Citations: 8,833
+   Citation Graph: Receives 7 citations, Makes 5 citations
+
+🏆 Dr. Maya Patel (ID 12)
+   Nobel Prize: Chemistry (2017)
+   Research Area: Neuroscience
+   Academic Profile: H-Index: 109, Total Citations: 5,108
+   Citation Graph: Receives 4 citations, Makes 5 citations
+
+
+ADJACENCY MATRIX
+--------------------------------------------------------------------------------
+
+Matrix Interpretation: matrix[i][j] = 1 means researcher i cites researcher j
+Nobel Prize winners are marked with 🏆
+
+      0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 
+           🏆 🏆          🏆    🏆       🏆                      
+   --------------------------------------------------------------
+ 0 | ·  ·  ·  ·  ·  ·  ·  ●  ·  ·  ·  ●  ·  ·  ·  ·  ·  ·  ·  ·   Dr. Alice Johnson
+ 1 | ·  ·  ·  ·  ·  ·  ·  ·  ·  ●  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·   Prof. Bob Smith
+ 2🏆| ·  ·  ·  ·  ·  ●  ·  ·  ·  ·  ·  ·  ●  ·  ·  ·  ·  ·  ●  ·   Dr. Carol Davis
+ 3🏆| ·  ·  ●  ·  ·  ·  ·  ·  ·  ·  ·  ●  ·  ·  ·  ·  ·  ·  ●  ·   Prof. David Wilson
+ 4 | ·  ·  ·  ●  ·  ·  ·  ●  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·   Dr. Eva Brown
+ 5 | ·  ●  ●  ·  ·  ·  ●  ·  ●  ●  ●  ·  ·  ·  ·  ·  ·  ·  ·  ·   Prof. Frank Miller
+ 6 | ·  ·  ●  ·  ·  ·  ·  ·  ●  ·  ·  ●  ·  ·  ●  ·  ·  ·  ·  ·   Dr. Grace Taylor
+ 7🏆| ·  ●  ·  ·  ●  ·  ·  ·  ●  ●  ·  ·  ·  ·  ·  ·  ·  ●  ·  ·   Prof. Henry Moore
+ 8 | ·  ·  ·  ·  ·  ·  ·  ●  ·  ●  ●  ·  ●  ·  ●  ·  ·  ·  ●  ·   Dr. Iris Clark
+ 9🏆| ·  ●  ●  ·  ·  ·  ·  ·  ●  ·  ●  ·  ·  ·  ·  ·  ·  ·  ●  ·   Prof. Jack White
+10 | ·  ·  ·  ●  ·  ·  ●  ·  ·  ●  ·  ·  ●  ·  ·  ·  ·  ·  ·  ·   Dr. Kate Green
+11 | ·  ·  ·  ·  ●  ·  ·  ·  ·  ●  ·  ·  ●  ·  ·  ·  ·  ·  ·  ●   Prof. Liam Hall
+12🏆| ·  ·  ●  ·  ·  ·  ●  ·  ·  ·  ●  ·  ·  ·  ·  ●  ·  ·  ·  ●   Dr. Maya Patel
+13 | ·  ·  ·  ●  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·   Prof. Noah Kim
+14 | ·  ·  ·  ·  ·  ·  ·  ·  ·  ●  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·   Dr. Olivia Lee
+15 | ·  ●  ·  ·  ·  ·  ·  ·  ●  ·  ·  ·  ·  ●  ·  ·  ·  ·  ·  ·   Prof. Paul Zhang
+16 | ●  ·  ●  ●  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·   Dr. Quinn Rodriguez
+17 | ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·   Prof. Rachel Chen
+18 | ·  ·  ·  ·  ·  ·  ·  ·  ●  ·  ·  ·  ·  ·  ●  ·  ·  ·  ·  ·   Dr. Sam Williams
+19 | ·  ·  ·  ·  ·  ●  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·   Prof. Tina Liu
+
+LEGEND:
+● = Citation exists (researcher in row cites researcher in column)
+· = No citation
+🏆 = Nobel Prize winner
+Numbers represent researcher IDs (0-19)
+
+
+GRAPH STATISTICS AND ANALYSIS
+--------------------------------------------------------------------------------
+
+BASIC STATISTICS
+--------------------------------------------------
+• Total Researchers: 20
+• Nobel Prize Winners: 5 (25.0%)
+• Total Citation Edges: 61
+• Graph Density: 0.161 (16.1% of possible edges)
+• Average Citations per Researcher: 3.05
+• Maximum Citations Received: 7
+• Maximum Citations Made: 6
+
+TOP 10 MOST CITED RESEARCHERS
+--------------------------------------------------
+Rank  Name                      Citations  Nobel     
+--------------------------------------------------
+1     Prof. Jack White          7          🏆 Yes     
+2     Dr. Carol Davis           6          🏆 Yes     
+3     Dr. Iris Clark            6          No        
+4     Prof. Bob Smith           4          No        
+5     Prof. David Wilson        4          🏆 Yes     
+6     Dr. Kate Green            4          No        
+7     Dr. Maya Patel            4          🏆 Yes     
+8     Dr. Sam Williams          4          No        
+9     Dr. Grace Taylor          3          No        
+10    Prof. Henry Moore         3          🏆 Yes     
+
+TOP 10 MOST ACTIVE CITERS
+--------------------------------------------------
+Rank  Name                      Citations  Nobel     
+--------------------------------------------------
+1     Prof. Frank Miller        6          No        
+2     Dr. Iris Clark            6          No        
+3     Prof. Henry Moore         5          🏆 Yes     
+4     Prof. Jack White          5          🏆 Yes     
+5     Dr. Maya Patel            5          🏆 Yes     
+6     Dr. Grace Taylor          4          No        
+7     Dr. Kate Green            4          No        
+8     Prof. Liam Hall           4          No        
+9     Dr. Carol Davis           3          🏆 Yes     
+10    Prof. David Wilson        3          🏆 Yes     
+
+NOBEL PRIZE WINNER ANALYSIS
+--------------------------------------------------
+• Citations to Nobel Winners: 24 (39.3% of all citations)
+• Citations by Nobel Winners: 21 (34.4% of all citations)
+• Average Citations Received by Nobel Winners: 4.8
+• Average Citations Received by Non-Nobel Winners: 2.5
+
+
+CITATION PATTERNS
+--------------------------------------------------------------------------------
+
+CITATIONS INVOLVING NOBEL PRIZE WINNERS
+--------------------------------------------------
+Format: Citing Researcher → Cited Researcher
+
+Total: 40 citations involving Nobel winners
+
+Dr. Alice Johnson  → Prof. Henry Moore 🏆
+Prof. Bob Smith  → Prof. Jack White 🏆
+Dr. Carol Davis 🏆 → Prof. Frank Miller 
+Dr. Carol Davis 🏆 → Dr. Maya Patel 🏆
+Dr. Carol Davis 🏆 → Dr. Sam Williams 
+Prof. David Wilson 🏆 → Dr. Carol Davis 🏆
+Prof. David Wilson 🏆 → Prof. Liam Hall 
+Prof. David Wilson 🏆 → Dr. Sam Williams 
+Dr. Eva Brown  → Prof. David Wilson 🏆
+Dr. Eva Brown  → Prof. Henry Moore 🏆
+Prof. Frank Miller  → Dr. Carol Davis 🏆
+Prof. Frank Miller  → Prof. Jack White 🏆
+Dr. Grace Taylor  → Dr. Carol Davis 🏆
+Prof. Henry Moore 🏆 → Prof. Bob Smith 
+Prof. Henry Moore 🏆 → Dr. Eva Brown 
+Prof. Henry Moore 🏆 → Dr. Iris Clark 
+Prof. Henry Moore 🏆 → Prof. Jack White 🏆
+Prof. Henry Moore 🏆 → Prof. Rachel Chen 
+Dr. Iris Clark  → Prof. Henry Moore 🏆
+Dr. Iris Clark  → Prof. Jack White 🏆
+Dr. Iris Clark  → Dr. Maya Patel 🏆
+Prof. Jack White 🏆 → Prof. Bob Smith 
+Prof. Jack White 🏆 → Dr. Carol Davis 🏆
+Prof. Jack White 🏆 → Dr. Iris Clark 
+Prof. Jack White 🏆 → Dr. Kate Green 
+Prof. Jack White 🏆 → Dr. Sam Williams 
+Dr. Kate Green  → Prof. David Wilson 🏆
+Dr. Kate Green  → Prof. Jack White 🏆
+Dr. Kate Green  → Dr. Maya Patel 🏆
+Prof. Liam Hall  → Prof. Jack White 🏆
+Prof. Liam Hall  → Dr. Maya Patel 🏆
+Dr. Maya Patel 🏆 → Dr. Carol Davis 🏆
+Dr. Maya Patel 🏆 → Dr. Grace Taylor 
+Dr. Maya Patel 🏆 → Dr. Kate Green 
+Dr. Maya Patel 🏆 → Prof. Paul Zhang 
+Dr. Maya Patel 🏆 → Prof. Tina Liu 
+Prof. Noah Kim  → Prof. David Wilson 🏆
+Dr. Olivia Lee  → Prof. Jack White 🏆
+Dr. Quinn Rodriguez  → Dr. Carol Davis 🏆
+Dr. Quinn Rodriguez  → Prof. David Wilson 🏆
+
+RESEARCH AREA DISTRIBUTION
+--------------------------------------------------
+Research Area        Total    Nobel    % Nobel 
+--------------------------------------------
+Biochemistry         1        0        0.0     %
+Bioinformatics       1        0        0.0     %
+Climate Science      3        1        33.3    %
+Computer Vision      1        0        0.0     %
+Machine Learning     3        0        0.0     %
+Materials Science    2        0        0.0     %
+Nanotechnology       2        1        50.0    %
+Neuroscience         3        2        66.7    %
+Quantum Physics      2        0        0.0     %
+Robotics             2        1        50.0    %
+
+
+ALGORITHM TESTING GUIDELINES
+--------------------------------------------------------------------------------
+
+OVERVIEW
+--------------------------------------------------
+This citation graph is designed for testing various graph algorithms. The adjacency 
+matrix format makes it suitable for testing centrality measures, path-finding 
+algorithms, community detection, and influence analysis.
+
+RECOMMENDED ALGORITHM CATEGORIES
+--------------------------------------------------
+
+1. CENTRALITY MEASURES
+   Algorithms: PageRank, Betweenness Centrality, Closeness Centrality, Eigenvector Centrality
+   Expected: Nobel winners should generally score higher, especially Prof. Jack White (ID 9)
+
+2. PATH FINDING ALGORITHMS
+   Algorithms: Shortest paths, All-pairs shortest paths, Reachability analysis
+   Expected: Average path length ~2-3 steps, most researchers reachable from Nobel winners
+
+3. COMMUNITY DETECTION
+   Algorithms: Louvain, Leiden, Modularity-based clustering
+   Expected: Research area clustering effects, one main connected component
+
+4. INFLUENCE ANALYSIS
+   Algorithms: Information propagation, Influence maximization, Network flow
+   Expected: Nobel winner bias in influence spread models
+
+5. NETWORK ANALYSIS
+   Algorithms: Strongly connected components, Topological sorting, Graph traversal
+   Expected: One large strongly connected component containing most researchers
+
+DATA QUALITY FEATURES
+--------------------------------------------------
+• Realistic Bias: Nobel winners have 2.5x higher probability of being cited
+• Research Clustering: Researchers in same area cite each other more frequently
+• Temporal Consistency: Award years are realistic (2015-2023)
+• Scale: 20 researchers provide good test size without being overwhelming
+• No Self-Citations: Diagonal elements are all zero
+• Connected Structure: Most nodes are reachable from each other
+
+USAGE INSTRUCTIONS
+--------------------------------------------------
+To use this graph in your algorithms:
+
+1. Load the data:
+   import json
+   with open('citation_graph_matrix_YYYYMMDD_HHMMSS.json', 'r') as f:
+       data = json.load(f)
+   adjacency_matrix = data['adjacency_matrix']
+   researchers = data['researchers']
+   nobel_winners = set(data['nobel_winners_ids'])
+
+2. Convert to your preferred format:
+   - Adjacency list: for sparse graph algorithms
+   - NetworkX graph: for using NetworkX library
+   - NumPy array: for numerical computations
+
+3. Run your algorithms and compare results with expected patterns
+
+EXPECTED TEST RESULTS
+--------------------------------------------------
+Based on the graph structure, algorithms should show:
+• Higher centrality scores for Nobel Prize winners
+• Short citation paths between researchers (average path length ~2-3)
+• One main strongly connected component containing most researchers
+• Research area clustering effects in community detection
+• Nobel winner bias in influence propagation models
+
+VALIDATION CHECKLIST
+--------------------------------------------------
+✓ Proper adjacency matrix format (20×20)
+✓ No self-citations (diagonal zeros)
+✓ Realistic citation distribution
+✓ Nobel winner bias implementation
+✓ Connected graph structure
+✓ Research area clustering effects
+
+
+================================================================================
+END OF REPORT
+================================================================================
+Report generated on August 06, 2025 at 04:46 PM
+Citation Graph Test Dataset - Ready for Algorithm Testing
+================================================================================
