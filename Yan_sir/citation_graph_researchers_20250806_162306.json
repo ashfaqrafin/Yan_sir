@@ -1,0 +1,202 @@
+[
+  {
+    "id": 0,
+    "name": "Dr. Alice Johnson",
+    "is_nobel_winner": false,
+    "nobel_category": null,
+    "award_year": null,
+    "research_area": "Nanotechnology",
+    "h_index": 24,
+    "total_citations": 704
+  },
+  {
+    "id": 1,
+    "name": "Prof. Bob Smith",
+    "is_nobel_winner": false,
+    "nobel_category": null,
+    "award_year": null,
+    "research_area": "Bioinformatics",
+    "h_index": 45,
+    "total_citations": 2506
+  },
+  {
+    "id": 2,
+    "name": "Dr. Carol Davis",
+    "is_nobel_winner": true,
+    "nobel_category": "Medicine",
+    "award_year": 2017,
+    "research_area": "Neuroscience",
+    "h_index": 97,
+    "total_citations": 4910
+  },
+  {
+    "id": 3,
+    "name": "Prof. David Wilson",
+    "is_nobel_winner": true,
+    "nobel_category": "Physics",
+    "award_year": 2017,
+    "research_area": "Nanotechnology",
+    "h_index": 118,
+    "total_citations": 7973
+  },
+  {
+    "id": 4,
+    "name": "Dr. Eva Brown",
+    "is_nobel_winner": false,
+    "nobel_category": null,
+    "award_year": null,
+    "research_area": "Climate Science",
+    "h_index": 64,
+    "total_citations": 760
+  },
+  {
+    "id": 5,
+    "name": "Prof. Frank Miller",
+    "is_nobel_winner": false,
+    "nobel_category": null,
+    "award_year": null,
+    "research_area": "Machine Learning",
+    "h_index": 21,
+    "total_citations": 2291
+  },
+  {
+    "id": 6,
+    "name": "Dr. Grace Taylor",
+    "is_nobel_winner": false,
+    "nobel_category": null,
+    "award_year": null,
+    "research_area": "Neuroscience",
+    "h_index": 74,
+    "total_citations": 717
+  },
+  {
+    "id": 7,
+    "name": "Prof. Henry Moore",
+    "is_nobel_winner": true,
+    "nobel_category": "Chemistry",
+    "award_year": 2019,
+    "research_area": "Robotics",
+    "h_index": 139,
+    "total_citations": 9673
+  },
+  {
+    "id": 8,
+    "name": "Dr. Iris Clark",
+    "is_nobel_winner": false,
+    "nobel_category": null,
+    "award_year": null,
+    "research_area": "Computer Vision",
+    "h_index": 38,
+    "total_citations": 4179
+  },
+  {
+    "id": 9,
+    "name": "Prof. Jack White",
+    "is_nobel_winner": true,
+    "nobel_category": "Medicine",
+    "award_year": 2022,
+    "research_area": "Climate Science",
+    "h_index": 131,
+    "total_citations": 8833
+  },
+  {
+    "id": 10,
+    "name": "Dr. Kate Green",
+    "is_nobel_winner": false,
+    "nobel_category": null,
+    "award_year": null,
+    "research_area": "Biochemistry",
+    "h_index": 99,
+    "total_citations": 3962
+  },
+  {
+    "id": 11,
+    "name": "Prof. Liam Hall",
+    "is_nobel_winner": false,
+    "nobel_category": null,
+    "award_year": null,
+    "research_area": "Materials Science",
+    "h_index": 45,
+    "total_citations": 1773
+  },
+  {
+    "id": 12,
+    "name": "Dr. Maya Patel",
+    "is_nobel_winner": true,
+    "nobel_category": "Chemistry",
+    "award_year": 2017,
+    "research_area": "Neuroscience",
+    "h_index": 109,
+    "total_citations": 5108
+  },
+  {
+    "id": 13,
+    "name": "Prof. Noah Kim",
+    "is_nobel_winner": false,
+    "nobel_category": null,
+    "award_year": null,
+    "research_area": "Quantum Physics",
+    "h_index": 58,
+    "total_citations": 1292
+  },
+  {
+    "id": 14,
+    "name": "Dr. Olivia Lee",
+    "is_nobel_winner": false,
+    "nobel_category": null,
+    "award_year": null,
+    "research_area": "Materials Science",
+    "h_index": 54,
+    "total_citations": 2666
+  },
+  {
+    "id": 15,
+    "name": "Prof. Paul Zhang",
+    "is_nobel_winner": false,
+    "nobel_category": null,
+    "award_year": null,
+    "research_area": "Machine Learning",
+    "h_index": 68,
+    "total_citations": 4892
+  },
+  {
+    "id": 16,
+    "name": "Dr. Quinn Rodriguez",
+    "is_nobel_winner": false,
+    "nobel_category": null,
+    "award_year": null,
+    "research_area": "Quantum Physics",
+    "h_index": 58,
+    "total_citations": 1145
+  },
+  {
+    "id": 17,
+    "name": "Prof. Rachel Chen",
+    "is_nobel_winner": false,
+    "nobel_category": null,
+    "award_year": null,
+    "research_area": "Robotics",
+    "h_index": 47,
+    "total_citations": 3462
+  },
+  {
+    "id": 18,
+    "name": "Dr. Sam Williams",
+    "is_nobel_winner": false,
+    "nobel_category": null,
+    "award_year": null,
+    "research_area": "Climate Science",
+    "h_index": 34,
+    "total_citations": 1069
+  },
+  {
+    "id": 19,
+    "name": "Prof. Tina Liu",
+    "is_nobel_winner": false,
+    "nobel_category": null,
+    "award_year": null,
+    "research_area": "Machine Learning",
+    "h_index": 94,
+    "total_citations": 2366
+  }
+]
