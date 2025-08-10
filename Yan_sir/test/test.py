@@ -1,232 +1,195 @@
 """
-Generalized implementation of the researcher ranking algorithm
-for large-scale datasets (millions of authors, hundreds of millions of edges).
+Generalized ranking implementation using JSON Lines input.
+
+Input files (JSONL, one JSON object per line):
+  - authors.jsonl     : { researcher_id, index }
+  - prizes.jsonl      : { prize_id, prestige, year, researcher_id }
+  - citations.jsonl   : { year, citer_id, citee_id, cite_count }
+  - collabs.jsonl     : { year, author_id, coauthor_id, paper_count }
 
 Phases:
-  1) Seed weights from awards (Equation 2).
-  2) Incrementally propagate citations + collaboration year-by-year (Equation 6).
+  1) Seed weights from awards (Equation 2) up to SEED_YEAR.
+  2) Year-by-year propagate citations + collabs (Equation 6).
 
-Assumes three CSV files (or other tabular source) with schema:
-
-  prizes.csv:
-    prize_id, prestige, year, researcher_id
-
-  citations.csv:
-    year, citer_id, citee_id, cite_count
-
-  collabs.csv:
-    year, author_id, coauthor_id, paper_count
-
-And an authors.csv listing all researcher_id → numeric index mapping:
-  researcher_id,index
-
-All CSVs can be very large; we process them in streaming/chunks.
+Designed to stream large datasets without loading entire files.
 """
 
-import csv
+import json
 from collections import defaultdict
-import os
 
 # --------------- CONFIGURATION ---------------
 
-# Input data files (CSV)
-PRIZE_FILE    = "prizes.csv"
-CITE_FILE     = "citations.csv"
-COLLAB_FILE   = "collabs.csv"
-AUTHOR_INDEX  = "authors.csv"
+# Filenames
+AUTHOR_FILE = "authors.jsonl"
+PRIZE_FILE  = "prizes.jsonl"
+CITE_FILE   = "citations.jsonl"
+COLLAB_FILE = "collabs.jsonl"
 
-# Cutoff year for seeding from awards
+# Seed cutoff year
 SEED_YEAR = 2023
+# Years to propagate (example: only 2024)
+ALL_YEARS = [2024]
 
-# List of all years to propagate (inclusive)
-ALL_YEARS = list(range(SEED_YEAR + 1, 2025))  # e.g. 2024, 2025
+# Tuning parameters
+ALPHA = 0.7
+BETA  = 0.3
 
-# Algorithm parameters
-ALPHA = 0.7    # weight for citations
-BETA  = 0.3    # weight for collaborations
+# --------------- GLOBALS ---------------
 
-# --------------- DATA STRUCTURES ---------------
-
-# Map researcher_id -> small integer index [0..N-1]
+# researcher_id -> integer index
 author_to_index = {}
-# Reverse map, if needed
+# index -> researcher_id
 index_to_author = {}
 
-# Seed weights vector w[i] for i in [0..N-1]
+# Current and next weight vectors
 W_current = []
+W_next    = []
 
-# Temporary storage for new weights each year
-W_next = []
-
-# Prize prestige lookup: prize_id -> prestige value (float)
-prize_prestige = {}
-
-# For seeding, count winners per (prize_id, year)
+# prize prestige lookup and counts
+prize_prestige      = {}
 prize_winner_counts = defaultdict(int)
 
 # --------------- UTILITY FUNCTIONS ---------------
 
-def load_author_index(path):
-    """
-    Reads authors.csv and fills author_to_index,
-    and initializes global W_current to zeros.
-    """
+def load_authors(path):
+    """Load author index mapping and initialize weight arrays."""
     global W_current, W_next
-    with open(path, newline='') as f:
-        reader = csv.reader(f)
-        for researcher_id, idx in reader:
-            idx = int(idx)
-            author_to_index[researcher_id] = idx
-            index_to_author[idx] = researcher_id
-
-    N = len(author_to_index)
+    max_idx = -1
+    with open(path, 'r') as f:
+        for line in f:
+            obj = json.loads(line)
+            ridx = obj['researcher_id']
+            idx  = obj['index']
+            author_to_index[ridx] = idx
+            index_to_author[idx] = ridx
+            max_idx = max(max_idx, idx)
+    N = max_idx + 1
     W_current = [0.0] * N
     W_next    = [0.0] * N
 
-
-def seed_from_awards(prize_file, seed_year):
-    """
-    Implements Equation 2:
-      w_i,T0 = sum_{p,τ≤T0} prestige_p * (count_i_wins(p,τ) / total_winners(p,τ))
-    Streaming through prizes.csv once to accumulate counts.
-    """
-    # First pass: read prestige & count winners per (prize,year)
-    with open(prize_file, newline='') as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            p = row['prize_id']
-            year = int(row['year'])
+def seed_awards(path, seed_year):
+    """Seed W_current from prizes up to seed_year (two-pass)."""
+    # First pass: record prestige & count winners
+    with open(path, 'r') as f:
+        for line in f:
+            rec = json.loads(line)
+            year = rec['year']
             if year > seed_year:
                 continue
-            prestige = float(row['prestige'])
+            p = rec['prize_id']
+            prestige = rec['prestige']
             prize_prestige[p] = prestige
             prize_winner_counts[(p, year)] += 1
 
-    # Second pass: distribute prestige among winners
-    with open(prize_file, newline='') as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            year = int(row['year'])
+    # Second pass: distribute prestige shares
+    with open(path, 'r') as f:
+        for line in f:
+            rec = json.loads(line)
+            year = rec['year']
             if year > seed_year:
                 continue
-            p   = row['prize_id']
-            pid = row['researcher_id']
+            p = rec['prize_id']
+            rid = rec['researcher_id']
             count = prize_winner_counts[(p, year)]
             if count == 0:
                 continue
-            prestige = prize_prestige[p]
-            share = prestige / count
-
-            idx = author_to_index.get(pid)
+            share = prize_prestige[p] / count
+            idx = author_to_index.get(rid)
             if idx is not None:
                 W_current[idx] += share
 
-
-def propagate_year(year, cite_file, collab_file):
-    """
-    Implements one step of Equation 6 for a single year.
-    Only reads citation and collaboration edges for that year,
-    and updates W_next from W_current.
-    """
-    # Reset new weights
+def propagate_year(year):
+    """One-step propagation for a given year using JSONL citation + collab."""
     N = len(W_current)
+    # reset next weights
     for i in range(N):
         W_next[i] = 0.0
 
-    # Process citations: we need total cites by j in that year
+    # 1) tally total cites by j in this year
     total_cites = defaultdict(int)
-    with open(cite_file, newline='') as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            if int(row['year']) != year:
+    with open(CITE_FILE, 'r') as f:
+        for line in f:
+            rec = json.loads(line)
+            if rec['year'] != year:
                 continue
-            j = row['citer_id']
-            cnt = int(row['cite_count'])
-            total_cites[j] += cnt
+            total_cites[rec['citer_id']] += rec['cite_count']
 
-    # First pass through citations.csv: citation contributions
-    # We also combine collaboration edges in the same loop if possible
-    with open(cite_file, newline='') as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            if int(row['year']) != year:
+    # 2) citation contributions
+    with open(CITE_FILE, 'r') as f:
+        for line in f:
+            rec = json.loads(line)
+            if rec['year'] != year:
                 continue
-            j = row['citer_id']
-            i = row['citee_id']
-            cij = int(row['cite_count'])
+            j = rec['citer_id']
+            i = rec['citee_id']
+            cij = rec['cite_count']
             idx_j = author_to_index.get(j)
             idx_i = author_to_index.get(i)
-            if idx_j is None or idx_i is None or W_current[idx_j] == 0.0:
+            if idx_j is None or idx_i is None:
                 continue
-
-            # citation fraction
+            wj = W_current[idx_j]
+            if wj == 0.0:
+                continue
             tc = total_cites[j]
-            cite_frac = (cij / tc) if tc > 0 else 0.0
+            cite_frac = cij / tc if tc > 0 else 0.0
+            W_next[idx_i] += wj * ALPHA * cite_frac
 
-            # we'll fetch collaboration fraction below
-            # accumulate partial vote
-            W_next[idx_i] += W_current[idx_j] * ALPHA * cite_frac
-
-    # Process collaborations: need total pubs by j in that year
+    # 3) tally total papers by j in this year
     total_pubs = defaultdict(int)
-    with open(collab_file, newline='') as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            if int(row['year']) != year:
+    with open(COLLAB_FILE, 'r') as f:
+        for line in f:
+            rec = json.loads(line)
+            if rec['year'] != year:
                 continue
-            j = row['author_id']
-            cnt = int(row['paper_count'])
-            total_pubs[j] += cnt
+            total_pubs[rec['author_id']] += rec['paper_count']
 
-    # Second pass through collabs.csv: collaboration contributions
-    with open(collab_file, newline='') as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            if int(row['year']) != year:
+    # 4) collaboration contributions
+    with open(COLLAB_FILE, 'r') as f:
+        for line in f:
+            rec = json.loads(line)
+            if rec['year'] != year:
                 continue
-            j = row['author_id']
-            i = row['coauthor_id']
-            kij = int(row['paper_count'])
+            j = rec['author_id']
+            i = rec['coauthor_id']
+            kij = rec['paper_count']
             idx_j = author_to_index.get(j)
             idx_i = author_to_index.get(i)
-            if idx_j is None or idx_i is None or W_current[idx_j] == 0.0:
+            if idx_j is None or idx_i is None:
                 continue
+            wj = W_current[idx_j]
+            if wj == 0.0:
+                continue
+            tp = total_pubs[j]
+            collab_frac = kij / tp if tp > 0 else 0.0
+            W_next[idx_i] += wj * BETA * collab_frac
 
-            pub_total = total_pubs[j]
-            collab_frac = (kij / pub_total) if pub_total > 0 else 0.0
-            W_next[idx_i] += W_current[idx_j] * BETA * collab_frac
-
-    # At end of year, swap W_next → W_current
+    # swap buffers
     for i in range(N):
         W_current[i] = W_next[i]
 
-
-# --------------- MAIN WORKFLOW ---------------
-
 def main():
-    # 1) Load author index
-    load_author_index(AUTHOR_INDEX)
+    # 1) load authors and init weights
+    load_authors(AUTHOR_FILE)
     print(f"Loaded {len(author_to_index)} authors.")
 
-    # 2) Seed initial weights from awards up to SEED_YEAR
-    seed_from_awards(PRIZE_FILE, SEED_YEAR)
-    print("Seed weights from awards completed.")
+    # 2) seed from awards
+    seed_awards(PRIZE_FILE, SEED_YEAR)
+    print("Seeding from awards complete.")
 
-    # 3) Propagate year-by-year
+    # 3) propagate for each year
     for yr in ALL_YEARS:
-        print(f"Propagating for year {yr} ...", end="")
-        propagate_year(yr, CITE_FILE, COLLAB_FILE)
-        print(" done.")
+        print(f"Propagating year {yr} ...")
+        propagate_year(yr)
+    print("Propagation complete.")
 
-    # 4) Output final weights
-    out_path = "researcher_rankings.csv"
-    with open(out_path, "w", newline="") as outf:
-        writer = csv.writer(outf)
-        writer.writerow(["researcher_id", "rank"])
-        for idx, score in enumerate(W_current):
-            writer.writerow([ index_to_author[idx], f"{score:.6f}" ])
-    print(f"Final rankings written to {out_path}")
+    # 4) output final ranks
+    out = []
+    for idx, score in enumerate(W_current):
+        out.append({"researcher_id": index_to_author[idx], "rank": score})
 
+    print("Final ranks:")
+    for rec in out:
+        print(rec)
 
 if __name__ == "__main__":
     main()
