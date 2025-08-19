@@ -16,7 +16,7 @@ import matplotlib.pyplot as plt
 import networkx as nx
 
 class CitationGraphGenerator:
-    def __init__(self, num_researchers=20, num_nobel_winners=5):
+    def __init__(self, num_researchers=100, num_nobel_winners=5):
         self.num_researchers = num_researchers
         self.num_nobel_winners = num_nobel_winners
         self.researchers = []
@@ -26,15 +26,9 @@ class CitationGraphGenerator:
         
     def generate_researchers(self):
         """Generate list of researchers with some being Nobel Prize winners"""
-        # Sample researcher names (mix of real and fictional)
-        researcher_names = [
-            "Dr. Alice Johnson", "Prof. Bob Smith", "Dr. Carol Davis", "Prof. David Wilson",
-            "Dr. Eva Brown", "Prof. Frank Miller", "Dr. Grace Taylor", "Prof. Henry Moore",
-            "Dr. Iris Clark", "Prof. Jack White", "Dr. Kate Green", "Prof. Liam Hall",
-            "Dr. Maya Patel", "Prof. Noah Kim", "Dr. Olivia Lee", "Prof. Paul Zhang",
-            "Dr. Quinn Rodriguez", "Prof. Rachel Chen", "Dr. Sam Williams", "Prof. Tina Liu"
-        ]
-        
+        # Generate researcher names dynamically
+        researcher_names = [f"Researcher {i}" for i in range(self.num_researchers)]
+
         # Nobel Prize categories for winners
         nobel_categories = [
             "Physics", "Chemistry", "Medicine", "Economic Sciences", "Literature"

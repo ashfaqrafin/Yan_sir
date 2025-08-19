@@ -225,7 +225,7 @@ class CitationGraphHTMLGenerator:
         
         return f"""
         <div class="header">
-            <h1>Citation Graph Test Dataset</h1>
+            <h1>Citation Graph ({self.statistics['total_researchers']} Researchers)</h1>
             <h2>Comprehensive Analysis Report</h2>
             <p>Generated: {gen_date}</p>
         </div>
@@ -767,7 +767,7 @@ def dense_to_sparse(matrix):
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Citation Graph Test Dataset - Analysis Report</title>
+    <title>Citation Graph ({self.statistics['total_researchers']} Researchers) - Analysis Report</title>
     {self.generate_css()}
 </head>
 <body>
