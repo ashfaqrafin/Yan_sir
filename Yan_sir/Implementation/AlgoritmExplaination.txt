@@ -1,0 +1,19 @@
+Algo_One
+1: procedure RANK(R₀, D, t, ε)
+2:   τ ← 1
+3:   while τ ≠ t do                    ▷ for each year from 1 up to t
+4:     M_τ ← D.getMatrixForYear(τ)     ▷ build the N×N “vote” matrix for year τ (M_τ = α·C_τ + β·K_τ)
+5:     R_τ ← R_{τ–1}                    ▷ initialize this year’s prestige vector to last year’s final vector
+6:     δ ← 1                            ▷ force at least one inner iteration
+7:     i ← 1
+8:     while δ > ε do                   ▷ keep iterating until the vector stops changing by more than ε
+9:       R_τ^{(i+1)} ← M_τ · R_τ^{(i)}  ▷ usual power‐iteration step
+10:      d ← ‖R_τ^{(i+1)}‖ – ‖R_τ^{(i)}‖   ▷ measure how the overall norm changed
+11:      R_τ^{(i+1)} ← R_τ^{(i+1)} – d·R_τ^{(i)} ▷ renormalize: subtract the “excess” so the new vector has the same norm as before
+12:      δ ← ‖R_τ^{(i+1)} – R_τ^{(i)}‖   ▷ how far did the vector move this iteration?
+13:      i ← i + 1
+14:    end while
+15:    τ ← τ + 1
+16:  end while
+17:  return R_τ^{(i)}                   ▷ final prestige scores after year t
+18: end procedure
